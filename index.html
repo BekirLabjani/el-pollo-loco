@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El-Pollo-Loco</title>
+    <link rel="stylesheet" href="styles/canvas-style.css">
+    <link rel="stylesheet" href="styles/start-game-Over.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+
+    <link rel="icon" href="./favicon/2/favicon.ico" type="image/png">
+    <link rel="icon" href="./favicon/2/favicon-32x32.png" type="image/svg+xml">
+    
+    <script src="models/drawabel-objects.class.js"></script>
+    <script src="models/status-bars.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/move-object.class.js"></script>
+    <script src="models/throw-object.class.js"></script>
+    <script src="models/collect-objects.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/enemy.class.js"></script>
+    <script src="models/background-objects.class.js"></script>
+    <script src="models/end_boss.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="levels/level1.js"></script>
+</head>
+
+<body>
+    <div class="mobileVersion dNone">
+        <div class="turnScreenBox" id="turnScreen">
+            <img class="turnScreenIcon" src="./icon/rotate-smartphone.png" alt="">
+            <p>Please rotate your device into landscape mode</p>
+        </div>
+    </div>
+    <h1>El Pollo Loco</h1>
+    <div class="gamePage">
+        <div class="muteContainer">
+         <span   id="mute" onclick="mute()" class="muteBTN"><ion-icon name="volume-high-outline"></ion-icon></span>
+        </div>
+      
+        <div class="startScreen  " id="startScreen">
+            <div class="startImage">
+                <div class="startWallpaperImage">
+                    <img src="img/9_intro_outro_screens/start/startscreen_2.png" alt="">
+                </div>
+                <div class="buttonContainer">
+                    <button onclick="startGame()">Start Game</button>
+                    <button onclick="settings()">Settings</button>
+                    <a  class="impress" href="impressum.html"><span onclick="impressum()" id="impress" class="impress"><ion-icon name="information-circle-outline"></ion-icon></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="settingScreen dNone" id="settingScreen">
+            <div class="settingImage">
+                <div class="settingWallpaperImage">
+                    <img class="images" src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+                </div>
+                <div class="buttonContainer">
+                    <!-- <button onclick="settings()" id="settingButton">Settings</button> -->
+                    <button onclick="home()" id="homeButton">Home</button>
+                    <div class="keyboardInfo">
+                        <div class="moveLeft">
+                            <p><b>Move Left</b></p>
+                            <img class="kayIcon" src="icon/keyboard_key_a.png" alt="">
+                            <img class="kayIcon" src="icon/keyboard_key_left.png" alt="">
+                        </div>
+                        <div class="moveRight">
+                            <p><b>Move Right</b></p>
+                            <img class="kayIcon" src="icon/d.png" alt="">
+                            <img class="kayIcon" src="icon/keyboard_key_right.png" alt="">
+                        </div>
+                        <div class="jump">
+                            <p><b>Jump</b></p>
+                            <img class="kayIcon" src="icon/space_10520061 (1).png" alt="">
+                        </div>
+                        <div class="shooting">
+                            <p><b>Shot</b></p>
+                            <img class="kayIcon" src="icon/letter-m_12149142.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gameOverScreen dNone" id="gameOverScreen">
+            <div class="gameOverImage">
+                <div class="gameOvertWallpaperImage">
+                    <img class="gameOverImages" src="img/9_intro_outro_screens/game_over/game over.png" alt="">
+                </div>
+                <div class="buttonContainer">
+                    <button onclick="restartGame()">Restart Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="winnerOverScreen dNone " id="winnerOverScreen">
+            <div class="winnerOverImage">
+                <div class="winnerOvertWallpaperImage">
+                    <img class="winnerOverImages" src="img/9_intro_outro_screens/second_half_background.png" alt="">
+                </div>
+                <div class="buttonContainer">
+                    <button onclick="restartGameFromWinn()">Start New Game</button>
+                </div>
+            </div>
+        </div>
+        <div class="fullScreenCanvas" id="fullScreenCanvas">
+            <div class="screenButton dNone"> <span class="fullScreenButton" onclick="openFullscreen()" id="fullScreenButton"><ion-icon name="scan-outline"></ion-icon></span>
+            </div>
+            <canvas class="dNone canvas" width="1200" height="700" id="canvas"></canvas>
+            <div class="mobileButton dNone">
+                <div class="mobileButtonFlex">
+                    <span id="btnJump" class="mobileBTN"><ion-icon name="arrow-up-circle-outline"></ion-icon></span>
+                    <span id="btnShot" class="mobileBTN"><ion-icon name="arrow-redo-circle-outline"></ion-icon></span>
+                </div>
+                <div class="mobileButtonFlex">
+                    <span id="btnLeft" class="mobileBTN"><ion-icon name="arrow-back-circle-outline"></ion-icon></span>
+                    <span id="btnRight" class="mobileBTN"><ion-icon name="arrow-forward-circle-outline"></ion-icon></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
